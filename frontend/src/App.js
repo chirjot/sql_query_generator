@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar} from './views';
 import { useStateContext } from './contexts/ContextProvider';
-//import { QueryGenerator1,OpenAiConfig,DbConfig,DbObjectSelector,DatabaseConfig } from './components'
+import { QueryGenerator,OpenAiConfiguration,DatabaseConfig } from './components'
 
 const App = () => {
   localStorage.setItem('OpenAI_Configuration',true)
@@ -38,7 +38,11 @@ const App = () => {
           
             <Routes>
                 {/* dashboard  */}
-             
+                <Route path="/" element={(<QueryGenerator />)}/>
+                <Route path="/queryGenerator" element={(<QueryGenerator />)}/>
+                <Route path="/openAIConfiguration" element={(<OpenAiConfiguration />)}/>
+                <Route path="/databaseConfig" element={(<DatabaseConfig />)}/>
+              
                
                 </Routes>
   
