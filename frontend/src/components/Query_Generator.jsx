@@ -62,10 +62,10 @@ const Query_Generator = () => {
   <div className='w-[93%] absolute ml-[5%]' style={{height:'65px',border:'1px solid #d3d3d3',borderCollapse:'separate',borderRadius:'0px'}}>
   </div>
     <div className={
-                fullScreenResult
+                (fullScreen
                   ? ' w-[51.5%] absolute ml-[5%]'
-                  : 'w-[0%]  absolute ml-[0]'
-              } style={{height:'65px',border:'1px solid #d3d3d3',borderCollapse:'separate',borderRadius:'0px'}}>
+                  : 'w-[99.2%]  absolute ml-[0]')
+             } style={{height:'65px',border:'1px solid #d3d3d3',borderCollapse:'separate',borderRadius:'0px'}}>
   <div className='absolute inline-flex rounded-full h-2 w-2 right-80 top-2' > 
     <div className='flex mt-2'>
       <div>
@@ -116,7 +116,7 @@ const Query_Generator = () => {
   {fullScreen && <div className={ 
    (fullScreenResult)
    ? ' w-[42%] absolute ml-[58%]'
-   : 'w-[100%]  absolute ml-[0]'} style={{height:'65px',border:'1px solid #d3d3d3',borderLeft:'none',borderCollapse:'separate',borderRadius:'0px',}}>
+   : 'w-[100%]  absolute ml-[0]' } style={{height:'65px',border:'1px solid #d3d3d3',borderLeft:'none',borderCollapse:'separate',borderRadius:'0px',}}>
   <div className='mt-4 ml-5 text-xl'>Result:</div>
   <div className='absolute inline-flex rounded-full h-2 w-2 right-36 top-2' > 
     <div className='flex mt-2'>
