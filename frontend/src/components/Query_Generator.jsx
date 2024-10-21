@@ -55,17 +55,16 @@ const Query_Generator = () => {
  
  <div>
   <div className='w-[90%] absolute   ' style={{marginTop:'10px',height:'35px',border:'none',borderCollapse:'separate',borderRadius:'0px',backgroundColor:'#F5F5F5'}}>
-  <p className='text-black text-xl  'style={{textAlign:'center'}}>Input</p></div>
+  <p className='text-black text-xl mt-2 'style={{textAlign:'center'}}>Input</p></div>
   </div>
   
   </div>
-  <div className='w-[93%] absolute ml-[5%]' style={{height:'65px',border:'1px solid #d3d3d3',borderCollapse:'separate',borderRadius:'0px'}}>
-  </div>
+ 
     <div className={
                 (fullScreen
                   ? ' w-[51.5%] absolute ml-[5%]'
-                  : 'w-[99.2%]  absolute ml-[0]')
-             } style={{height:'65px',border:'1px solid #d3d3d3',borderCollapse:'separate',borderRadius:'0px'}}>
+                  : 'w-[94.2%]  absolute ml-[5%]')
+             } style={{height:'65px',border:'1px solid #d3d3d3',borderCollapse:'separate',borderRadius:'0px',}}>
   <div className='absolute inline-flex rounded-full h-2 w-2 right-80 top-2' > 
     <div className='flex mt-2'>
       <div>
