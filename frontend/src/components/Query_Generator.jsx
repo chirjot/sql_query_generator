@@ -21,7 +21,7 @@ const Query_Generator = () => {
   <div style={{height:'865px'}}>
     
   <div  style={{height:'65px'}}>
-  <div className='w-[98%] absolute ' style={{height:'65px',border:'1px solid #dadada',borderBlockEnd:"1px solid #F5F5F5",borderCollapse:'separate',borderRadius:'0px',backgroundColor:'white'}}>
+  <div className='w-[98%] absolute ' style={{height:'65px',border:'1px solid #dadada',borderCollapse:'separate',borderRadius:'0px',backgroundColor:'white'}}>
  
   
   <div className='flex '><div> {fullScreenResult && <button
@@ -46,6 +46,17 @@ const Query_Generator = () => {
   <div 
   className={
     fullScreenResult
+      ? ' w-[2%] absolute '
+      : 'w-[0]  absolute '
+  }  style={{height:'20px',marginLeft:'-15px',border:'none',borderCollapse:'separate',borderRadius:'0px',backgroundColor:'#F5F5F5'}}>
+  
+  
+  
+ 
+ </div>
+  <div 
+  className={
+    fullScreenResult
       ? ' w-[5%] absolute '
       : 'w-[0]  absolute '
   }  style={{height:'65px',border:'none',borderCollapse:'separate',borderRadius:'0px',backgroundColor:'#F5F5F5'}}>
@@ -59,12 +70,22 @@ const Query_Generator = () => {
   </div>
   
   </div>
+  <div 
+  className={
+    fullScreenResult
+      ? ' w-[2%] absolute '
+      : 'w-[0]  absolute '
+  }  style={{height:'20px',marginLeft:'-15px',marginTop:"45px",border:'none',borderCollapse:'separate',borderRadius:'0px',backgroundColor:'#F5F5F5'}}>
+  
+  
+  
  
+ </div>
     <div className={
                 (fullScreen
                   ? ' w-[51.5%] absolute ml-[5%]'
                   : 'w-[94.2%]  absolute ml-[5%]')
-             } style={{height:'65px',border:'1px solid #d3d3d3',borderCollapse:'separate',borderRadius:'0px',}}>
+             } style={{height:'65px',border:'1px solid #d3d3d3',borderTop:'none',borderBlockEnd:'none',borderCollapse:'separate',borderRadius:'0px',}}>
   <div className='absolute inline-flex rounded-full h-2 w-2 right-80 top-2' > 
     <div className='flex mt-2'>
       <div>
@@ -115,7 +136,7 @@ const Query_Generator = () => {
   {fullScreen && <div className={ 
    (fullScreenResult)
    ? ' w-[42%] absolute ml-[58%]'
-   : 'w-[100%]  absolute ml-[0]' } style={{height:'65px',border:'1px solid #d3d3d3',borderLeft:'none',borderCollapse:'separate',borderRadius:'0px',}}>
+   : 'w-[100%]  absolute ml-[0]' } style={{height:'65px',border:'none',borderCollapse:'separate',borderRadius:'0px',}}>
   <div className='mt-4 ml-5 text-xl'>Result:</div>
   <div className='absolute inline-flex rounded-full h-2 w-2 right-36 top-2' > 
     <div className='flex mt-2'>
@@ -161,13 +182,13 @@ const Query_Generator = () => {
   <div ><textarea className='mt-4 ml-[2%] text-xl  absolute w-[94%] div11' style={{height:'250px', backgroundColor:'#F5F5F5',}}></textarea></div>
   </div>
   </div>}
-  {fullScreenResult && <div style={{height:'40px'}} >
+  {fullScreenResult && <div style={{height:'55px'}} >
   <div className={
                 fullScreen
                   ? ' w-[56.15%] absolute '
                   : 'w-[98%]  absolute '
-              }  style={{height:"40px",border:'1px solid #dadada',borderCollapse:'separate',borderRadius:'0px',backgroundColor:"#FBFBFB"}}>
-  <p className='text-xl ml-2 mt-1'>Generated Query</p>
+              }  style={{height:"55px",border:'1px solid #dadada',borderTop:'none',borderBlockEnd:'none',borderCollapse:'separate',borderRadius:'0px',backgroundColor:"#FBFBFB"}}>
+  <p className='text-xl ml-2 mt-3'>Generated Query</p>
   </div>
   </div>}
   
