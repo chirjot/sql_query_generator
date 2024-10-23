@@ -13,6 +13,7 @@ import nttlogo from '../data/nttdatalogo.svg';
 import { IoHomeOutline } from "react-icons/io5";
 
 import { MdOutlineWbSunny } from "react-icons/md";
+import { LuSunMoon } from "react-icons/lu";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
  
@@ -32,7 +33,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu,setActiveMenu,mainPage,setMainPage,initialState,handleClick,isClicked,currentMode,} = useStateContext();
+  const { activeMenu,setActiveMenu,mainPage,setMainPage,initialState,handleClick,isClicked,currentMode,setCurrentMode} = useStateContext();
   console.log("ok",initialState,isClicked)
  
  console.log("main page",activeMenu)
@@ -48,7 +49,8 @@ const Navbar = () => {
   
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
-    <div className='flex justify-between md:mx-0 relative w-full'  > 
+      
+    <div className='flex justify-between md:mx-0 relative w-full dark:bg-[#1F2023] bg:white'  > 
   
     <div><img
           style={{width:"250px",marginLeft:"-15px"}}
@@ -61,14 +63,16 @@ const Navbar = () => {
      {(activeMenu) &&
       <NavButton title="Chat" customFunc={() => handleClick('setting')}
     
-      color={ currentMode === 'Light'  ? 'black' : 'black'}  icon={<FiSettings />} />}
+      color={ currentMode === 'Light'  ? 'black' : 'white'}  icon={<FiSettings />} />}
       {!(activeMenu) &&  <NavButton title="Chat" customFunc={() => {setMainPage(true);setActiveMenu(true)}}
     
-    color={ currentMode === 'Light'  ? 'black' : 'black'}  icon={<IoHomeOutline />} />}
-      <NavButton title="Notification" customFunc={() => handleClick('notification')}
+    color={ currentMode === 'Light'  ? 'black' : 'white'}  icon={<IoHomeOutline />} />}
+     {(currentMode === 'Light') && <NavButton title="Notification" customFunc={() => setCurrentMode("Dark")}
        
-      color={ currentMode === 'Light'  ? 'black' : 'black'}  icon={<MdOutlineWbSunny />} />
+      color={ currentMode === 'Light'  ? 'black' : 'white'}  icon={<MdOutlineWbSunny />} />}
+        {(currentMode === 'Dark') && <NavButton title="Notification" customFunc={() => setCurrentMode("Light")}
        
+       color={ currentMode === 'Light'  ? 'black' : 'white'}  icon={<LuSunMoon />} />}
           <div
             className="flex items-center mt-4 gap-2 cursor-pointer p-1  rounded-lg"
             onClick={() => handleClick('userProfile')}
@@ -79,10 +83,10 @@ const Navbar = () => {
               alt="user-profile"
             />
             <p className='whitespace-nowrap flex '>
-              <span className="text-black-400 text-14 text-black dark:text-black"  >Hi,</span>{' '}
-              <span className="flex text-black-400 font-bold ml-1 text-14 text-black dark:text-black"  >
+              <span className="text-black-400 text-14 text-black dark:text-white"  >Hi,</span>{' '}
+              <span className="flex text-black-400 font-bold ml-1 text-14 text-black dark:text-white"  >
                 Michael
-                <MdKeyboardArrowDown className="text-black text-14 mt-1" />
+                <MdKeyboardArrowDown className="text-black  dark:text-white text-14 mt-1" />
               </span>
             </p>
           

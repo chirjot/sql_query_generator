@@ -14,9 +14,7 @@ export const ContextProvider = ({ children }) => {
   console.log(localStorage.getItem('openAI_Configuration'))
   const [activeMenu, setActiveMenu] = useState((localStorage.getItem('openAI_Configuration')) || true);
   const [isClicked, setIsClicked] = useState(initialState);
-  const [currentColor, setCurrentColor] = useState('blue');
   const [currentMode, setCurrentMode] = useState('Dark');
-  const [themeSettings, setThemeSettings] = useState(false);
   const [mainPage, setMainPage] = useState(false)
   const [login1,setlogin1] = useState(loginstate)
   const [openAiSetting, setopenAiSettings] = useState(true);
@@ -31,7 +29,7 @@ export const ContextProvider = ({ children }) => {
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <StateContext.Provider value={{ mainPage,setMainPage,configurationSettings, setConfigSettings,querySuccess,setQuery,openAiSetting,setopenAiSettings,dbConfiguration,setDBConfiguration,dbSchema,schemaSuccess,setSchema,setDBSchema,openAISuccess,setOpenAISuccess,activeMenu,setActiveMenu,handleClick,setIsClicked,isClicked,initialState,setCurrentColor}}>
+    <StateContext.Provider value={{ currentMode, setCurrentMode,mainPage,setMainPage,configurationSettings, setConfigSettings,querySuccess,setQuery,openAiSetting,setopenAiSettings,dbConfiguration,setDBConfiguration,dbSchema,schemaSuccess,setSchema,setDBSchema,openAISuccess,setOpenAISuccess,activeMenu,setActiveMenu,handleClick,setIsClicked,isClicked,initialState,}}>
       {children}
     </StateContext.Provider>
   );

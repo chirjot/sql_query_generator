@@ -28,8 +28,8 @@ const App = () => {
       <div
             className={
               activeMenu
-                ? 'bg-white min-h-screen   md:ml-4 w-full '
-                : 'bg-white min-h-screen  md:ml-4 w-full  '
+                ? 'bg-white min-h-screen   md:ml-0 w-full '
+                : 'bg-white min-h-screen  md:ml-0 w-full  '
             }
           >
             <div className="fixed md:static bg-white navbar w-full ">
