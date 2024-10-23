@@ -12,15 +12,7 @@ const Query_Generator = () => {
     const { currentMode, setCurrentMode} = useStateContext();
     const [fullScreen,setFullScreen] = useState(true)
     const [fullScreenResult,setFullScreenResult] = useState(true)
-    let inputStyle = {
-      border: '1px solid black'
-    };
-    // change code below this line
-    if(currentMode === 'Light'){
-      inputStyle={
-         border: '3px solid red'
-      }
-    }
+  
     console.log('full screen',fullScreen)
     return (
       
@@ -96,7 +88,7 @@ const Query_Generator = () => {
                 (fullScreen
                   ? ' w-[51.47%] absolute ml-[5%]'
                   : 'w-[94.2%]  absolute ml-[5%]')
-             } style={{height:'65px',borderLeft:currentMode === "Dark" ? '1px solid #616161' : '1px solid #dadada',borderRight:currentMode === "Dark" ? '1px solid #616161' : '1px solid #dadada'}}>
+             } style={{height:'65px',borderLeft:currentMode === "Dark" ? '1px solid #616161' : '1px solid #dadada',borderRight:currentMode === "Dark" ? '1px solid #616161' : '1px solid #dadada',borderBlockEnd:currentMode === "Dark" ? '1px solid #616161' : '1px solid #dadada'}}>
   <div className='absolute inline-flex rounded-full h-2 w-2 right-80 top-2' > 
     <div className='flex mt-2'>
       <div>
@@ -146,8 +138,8 @@ const Query_Generator = () => {
   
   {fullScreen && <div className={ 
    (fullScreenResult)
-   ? ' w-[42%] absolute ml-[58%]'
-   : 'w-[100%]  absolute ml-[0]' } style={{height:'65px',border:'none',borderCollapse:'separate',borderRadius:'0px',}}>
+   ? ' w-[43%] absolute ml-[58%] dark:bg-transparent bg-transparent'
+   : 'w-[100%]  absolute ml-[0]' } style={{height:'65px',borderBlockEnd:currentMode === "Dark" ? '1px solid #616161' : '1px solid #dadada'}}>
   <div className='mt-4 ml-5 text-xl dark:text-white'>Result:</div>
   <div className='absolute inline-flex rounded-full h-2 w-2 right-36 top-2' > 
     <div className='flex mt-2'>
@@ -172,7 +164,7 @@ const Query_Generator = () => {
     </div>
     </div>
   </div>}
-  {fullScreenResult && <div className='' style={{marginTop:'64px'}}>
+  {fullScreenResult && <div className='' style={{marginTop:'65px'}}>
   <div className={ 
    (fullScreenResult)
    ? ' w-[43.6%] absolute ml-[56.6%] dark:bg-[#1F2023] bg-white '
